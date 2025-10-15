@@ -2,17 +2,16 @@
 📘Overview
 
 This repository contains my SQL practice exercises, written in PostgreSQL.
-The first task set focuses on analyzing the Data Science Salaries 2023 dataset from Kaggle.
 
 The exercises are based on examples and ideas from:
 
 [Nikita Tymoshenko’s SQL Course on YouTube](https://www.youtube.com/watch?v=HkT_VrzbXZQ)
-
 [Nikita Tymoshenko’s GitHub Repository](https://github.com/Youtube-NikitaTymoshenko/sql-course/tree/main)
 
 📂 Repository Structure
 
 `ds_salaries.sql` - Queries for the Data Science Salaries dataset (PostgreSQL)
+`data_exploration_ds_salaries.sql` - Queries for data exploration of the Data Science Salaries dataset (PostgreSQL)
 
 🧠 Dataset
 
