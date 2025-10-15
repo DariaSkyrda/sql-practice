@@ -347,10 +347,6 @@ WHERE
 
 /* Вивести всіх спеціалістів, які живуть в країнах, де середня з/п вища 
 за середню серед усіх країн.*/
---1. Пошук середньої з/п
---2. По кожній країні - середня з/п
---3. Порівнюємо, виводимо передік країн
---4. Спеціалісти, що проживають в цих країнах
 SELECT 
 	 job_title
 	, emp_location
@@ -367,33 +363,49 @@ WHERE
 --Знайти мінімальну заробітну плату серед максимальних з/п по країнах
 -- 1. максимальних з/п по країнах в 2023 році
 -- 2. Знайти мінімальну з/п
-SELECT MIN(max_salary) AS min_max_salary
+SELECT MIN(t.max_salary) AS min_max_salary
 FROM (
 	SELECT MAX(salary_in_usd) as max_salary
 	FROM salaries 
 	WHERE year = 2023
 	GROUP BY comp_location
-) max_salaries_in_each_country;
+) AS t;
+
+SELECT 
+	MAX(salary_in_usd) AS min_max_salary
+FROM salaries
+WHERE
+	year = 2023
+GROUP BY comp_location
+ORDER BY min_max_salary ASC
+LIMIT 1;
 
 /* По кожній професії вивести різницю між середньою з/п та максимальною з/п 
-усіх спеціалістів */
---1. Максимальна з/п
---2. Таблиця професій і середніх з/п
---3. Результат
+усіх спеціалістів */т
 SELECT 
-	MAX(salary_in_usd) - ROUND(AVG(salary_in_usd)) AS diff_max_and_avg_salary
+	job_title
+	, ROUND(AVG(salary_in_usd)) -
+	(
+		SELECT MAX(salary_in_usd) 
+		FROM salaries
+	) AS diff
 FROM salaries
 GROUP BY job_title;
 
 --Вивести дані по співробітнику, який отримує другу по розміру з/п в таблиці
 SELECT *  
 FROM salaries 
-WHERE salary_in_usd <> (SELECT MAX(salary_in_usd) FROM salaries)
-ORDER BY salary_in_usd DESC
+WHERE salary_in_usd <>  
+	(	
+		SELECT MAX(salary_in_usd) 
+		FROM salaries
+	)
+ORDER BY salary_in_usd DESC 
 LIMIT 1;
 
 SELECT *  
 FROM salaries 
 ORDER BY salary_in_usd DESC
 LIMIT 1 OFFSET 1;
+
 
