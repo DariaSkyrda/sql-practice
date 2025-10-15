@@ -60,25 +60,3 @@ ORDER BY salary_category;
 SELECT 
 	corr(remote_ratio, salary_in_usd)
 FROM salaries;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
