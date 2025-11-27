@@ -15,7 +15,8 @@ The exercises are based on examples and ideas from:
 
 🧠 Dataset
 
-Source: - [Data Science Salaries 2023 – Kaggle](https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023)
+Source: 
+- [Data Science Salaries 2023 – Kaggle](https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023)
 - Chinook Database - a sample database that is often used for learning and practicing SQL. It simulates a digital media store.
 
 🧩 Topics Covered
