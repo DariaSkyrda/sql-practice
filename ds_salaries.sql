@@ -408,4 +408,26 @@ FROM salaries
 ORDER BY salary_in_usd DESC
 LIMIT 1 OFFSET 1;
 
+--Window Functions
+SELECT 
+	job_title
+	, salary_in_usd
+	, AVG(salary_in_usd) OVER()
+FROM salaries;
 
+--тільки співробітники, у яких зп перевищує середню по професії, 
+--яку вони представляють
+WITH avg_salaries AS (
+	SELECT 
+		job_title
+		, salary_in_usd 
+		, AVG(salary_in_usd) OVER(PARTITION BY job_title) avg_salary
+	FROM salaries
+	where year = 2023
+)
+SELECT 
+	job_title
+	, salary_in_usd 
+	, ROUND(avg_salary) AS avg_salary
+FROM avg_salaries
+WHERE  salary_in_usd > avg_salary;
