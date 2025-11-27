@@ -6,7 +6,6 @@ This repository contains my SQL practice exercises, written in PostgreSQL, SQLit
 The exercises are based on examples and ideas from:
 
 - [Nikita Tymoshenko’s SQL Course on YouTube](https://www.youtube.com/watch?v=HkT_VrzbXZQ)
-- [Nikita Tymoshenko’s GitHub Repository](https://github.com/Youtube-NikitaTymoshenko/sql-course/tree/main)
 
 📂 Repository Structure
 
@@ -16,8 +15,8 @@ The exercises are based on examples and ideas from:
 
 🧠 Dataset
 
-Source: [Data Science Salaries 2023 – Kaggle](https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023)
-Chinook Database - a sample database that is often used for learning and practicing SQL. It simulates a digital media store.
+Source: - [Data Science Salaries 2023 – Kaggle](https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023)
+- Chinook Database - a sample database that is often used for learning and practicing SQL. It simulates a digital media store.
 
 🧩 Topics Covered
 
